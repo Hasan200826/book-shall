@@ -1,3 +1,4 @@
+import BookSection from '@/components/BookSection';
 import React from 'react';
 
 const page = () => {
@@ -15,14 +16,7 @@ const page = () => {
            </select>
          </div>
          <div>
-            {/* name of each tab group should be unique */}
-            <div className="tabs tabs-lift">
-              <input type="radio" name="my_tabs_3" className="tab" aria-label="Read Books" defaultChecked />
-              <div className="tab-content bg-base-100 border-base-300 p-6">Read Books</div>
-            
-              <input type="radio" name="my_tabs_3" className="tab" aria-label="WishList Book" />
-              <div className="tab-content bg-base-100 border-base-300 p-6">WishList Book</div>
-            </div>
+            <BookSection/>
          </div>
       </div>
     </div>

@@ -1,28 +1,25 @@
 "use client";
 
+import { BookType } from "@/type/BookType";
 import React, {
   createContext,
   useState,
   ReactNode,
 } from "react";
 
-type Book = {
-  id: number;
-  title: string;
-};
 
 type DataContextType = {
-  readBook: Book[];
-  setReadBook: React.Dispatch<React.SetStateAction<Book[]>>;
-  WishList: Book[];
-  setWishList: React.Dispatch<React.SetStateAction<Book[]>>;
+  readBook:BookType[];
+  setReadBook: React.Dispatch<React.SetStateAction<BookType[]>>;
+  WishList:BookType[];
+  setWishList: React.Dispatch<React.SetStateAction<BookType[]>>;
 };
 
 export const DataProvider = createContext<DataContextType | undefined>(undefined);
 
 function BookData({ children }: { children: ReactNode }) {
-  const [readBook, setReadBook] = useState<Book[]>([]);
-  const [WishList, setWishList] = useState<Book[]>([]);
+  const [readBook, setReadBook] = useState<BookType[]>([]);
+  const [WishList, setWishList] = useState<BookType[]>([]);
 
   const user: DataContextType = {
     readBook,
